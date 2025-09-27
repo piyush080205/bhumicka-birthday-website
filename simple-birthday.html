@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bhumicka! 🎂</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #FFB6C1 0%, #DDA0DD 50%, #F5F5DC 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 50%, #FFFAFA 100%);
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #8B008B;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #4B0082;
+            margin-bottom: 2rem;
+        }
+
+        .cat-container {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .cat {
+            font-size: 4rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .cat:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .cat:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .cat:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        .gallery-section {
+            background: linear-gradient(135deg, #E6E6FA 0%, #DDA0DD 50%, #FFB6C1 100%);
+        }
+
+        .gallery-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #8B008B;
+            margin-bottom: 2rem;
+        }
+
+        .photo-carousel {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1000px;
+        }
+
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            border: 8px solid #FFFAFA;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .photo-frame::before {
+            content: '🐱';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 2rem;
+            z-index: 10;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .message-section {
+            background: linear-gradient(135deg, #F5F5DC 0%, #FFFAFA 50%, #FFB6C1 100%);
+            text-align: center;
+        }
+
+        .message-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #8B008B;
+            margin-bottom: 2rem;
+        }
+
+        .message-text {
+            font-size: 1.3rem;
+            color: #4B0082;
+            max-width: 800px;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .fun-section {
+            background: linear-gradient(135deg, #DDA0DD 0%, #E6E6FA 50%, #F5F5DC 100%);
+            text-align: center;
+        }
+
+        .fun-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #8B008B;
+            margin-bottom: 2rem;
+        }
+
+        .cat-facts {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            max-width: 600px;
+        }
+
+        .cat-fact {
+            font-size: 1.2rem;
+            color: #4B0082;
+            margin-bottom: 1rem;
+        }
+
+        .interactive-cats {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .interactive-cat {
+            font-size: 5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: wiggle 2s ease-in-out infinite;
+        }
+
+        .interactive-cat:hover {
+            transform: scale(1.3);
+        }
+
+        .final-section {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 50%, #E6E6FA 100%);
+            text-align: center;
+        }
+
+        .final-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #8B008B;
+            margin-bottom: 2rem;
+        }
+
+        .final-message {
+            font-size: 1.5rem;
+            color: #4B0082;
+            margin-bottom: 2rem;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #8B008B;
+        }
+
+        /* Floating Elements */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .heart {
+            position: absolute;
+            color: #FF69B4;
+            font-size: 2rem;
+            animation: heartFloat 8s linear infinite;
+        }
+
+        .paw-prints {
+            position: fixed;
+            top: 50%;
+            left: -50px;
+            font-size: 2rem;
+            color: #8B008B;
+            animation: pawWalk 15s linear infinite;
+            z-index: 999;
+        }
+
+        /* Animations */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        @keyframes heartFloat {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) scale(1); opacity: 0; }
+        }
+
+        @keyframes pawWalk {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(calc(100vw + 100px)); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .cat { font-size: 3rem; }
+            .photo-frame { width: 150px; height: 150px; }
+            .gallery-title, .message-title, .fun-title { font-size: 2rem; }
+            .final-title { font-size: 2.5rem; }
+            .message-text { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts -->
+    <div class="floating-hearts" id="floating-hearts"></div>
+    
+    <!-- Walking Paw Prints -->
+    <div class="paw-prints">🐾</div>
+
+    <!-- Hero Section -->
+    <section class="section hero-section">
+        <h1 class="hero-title">Happy Birthday, Bhumicka!</h1>
+        <p class="hero-subtitle">September 28th - Your Special Day! 🎂</p>
+        <div class="cat-container">
+            <div class="cat" onclick="meow()">🐱</div>
+            <div class="cat" onclick="meow()">😸</div>
+            <div class="cat" onclick="meow()">😻</div>
+        </div>
+        <p style="font-size: 1.2rem; color: #4B0082; margin-top: 2rem;">
+            Today is all about celebrating the most amazing person I know! 💕
+        </p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery-section">
+        <h2 class="gallery-title">Our Beautiful Memories 📸</h2>
+        <div class="photo-carousel">
+            <div class="photo-frame">
+                <img src="images/pic1.jpg" alt="Memory 1">
+            </div>
+            <div class="photo-frame">
+                <img src="images/pic2.jpg" alt="Memory 2">
+            </div>
+            <div class="photo-frame">
+                <img src="images/pic3.jpg" alt="Memory 3">
+            </div>
+            <div class="photo-frame">
+                <img src="images/pic4.jpg" alt="Memory 4">
+            </div>
+            <div class="photo-frame">
+                <img src="images/pic5.jpg" alt="Memory 5">
+            </div>
+        </div>
+        <p style="font-size: 1.2rem; color: #4B0082; margin-top: 2rem; text-align: center;">
+            Every moment with you is a treasure I hold close to my heart 💖
+        </p>
+    </section>
+
+    <!-- Message Section -->
+    <section class="section message-section">
+        <h2 class="message-title">A Message From My Heart 💝</h2>
+        <div class="message-text">
+            <p>My dearest Bhumicka,</p>
+            <br>
+            <p>On this special day, I want you to know how much you mean to me. You bring so much joy, laughter, and love into my life. Your smile lights up my world, and your kind heart makes everything better.</p>
+            <br>
+            <p>Just like how cats bring warmth and comfort to a home, you bring warmth and happiness to my life every single day. You're not just my girlfriend, you're my best friend, my partner in all adventures, and the person who makes my heart skip a beat.</p>
+            <br>
+            <p>I hope this birthday brings you all the happiness you deserve and more. You're absolutely purr-fect in every way! 🐱💕</p>
+        </div>
+    </section>
+
+    <!-- Fun Section -->
+    <section class="section fun-section">
+        <h2 class="fun-title">Fun Cat Facts for the Cat Lover! 🐾</h2>
+        <div class="cat-facts">
+            <div class="cat-fact" id="cat-fact">
+                Did you know? Cats spend 70% of their lives sleeping - that's 13-16 hours a day! 😴
+            </div>
+        </div>
+        <div class="interactive-cats">
+            <div class="interactive-cat" onclick="playWithCat(this)">🐱</div>
+            <div class="interactive-cat" onclick="playWithCat(this)">😺</div>
+            <div class="interactive-cat" onclick="playWithCat(this)">😸</div>
+            <div class="interactive-cat" onclick="playWithCat(this)">😻</div>
+        </div>
+        <p style="font-size: 1.2rem; color: #4B0082; margin-top: 2rem;">
+            Click on the cats above to play with them! 🎮
+        </p>
+    </section>
+
+    <!-- Final Section -->
+    <section class="section final-section">
+        <h2 class="final-title">With All My Love 💕</h2>
+        <p class="final-message">
+            Happy Birthday to the most wonderful person in the world!<br>
+            May your day be filled with love, laughter, and lots of cat cuddles! 🐱
+        </p>
+        <p class="signature">With love, always – Piyush 💕</p>
+        <div style="margin-top: 2rem; font-size: 3rem;">
+            🎂🎉🎈🐱💖🎁
+        </div>
+    </section>
+
+    <script>
+        // Floating Hearts Animation
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            document.getElementById('floating-hearts').appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        // Create hearts periodically
+        setInterval(createHeart, 2000);
+
+        // Cat Facts Rotation
+        const catFacts = [
+            "Did you know? Cats spend 70% of their lives sleeping - that's 13-16 hours a day! 😴",
+            "A group of cats is called a 'clowder' and a group of kittens is called a 'kindle'! 📚",
+            "Cats have over 20 muscles that control their ears! 👂",
+            "A cat's purr vibrates at a frequency that promotes bone healing! 🎵",
+            "Cats can rotate their ears 180 degrees! 🔄",
+            "The oldest known pet cat existed 9,500 years ago! 🏺",
+            "Cats have a third eyelid called a 'nictitating membrane'! 👁️",
+            "A cat's nose print is unique, just like a human's fingerprint! 👃"
+        ];
+
+        let currentFactIndex = 0;
+        function rotateCatFacts() {
+            const factElement = document.getElementById('cat-fact');
+            factElement.style.opacity = '0';
+            setTimeout(() => {
+                currentFactIndex = (currentFactIndex + 1) % catFacts.length;
+                factElement.textContent = catFacts[currentFactIndex];
+                factElement.style.opacity = '1';
+            }, 500);
+        }
+
+        setInterval(rotateCatFacts, 4000);
+
+        // Interactive Functions
+        function meow() {
+            // Create a temporary meow sound effect (visual)
+            const meowText = document.createElement('div');
+            meowText.innerHTML = 'Meow! 🐱';
+            meowText.style.position = 'fixed';
+            meowText.style.top = '50%';
+            meowText.style.left = '50%';
+            meowText.style.transform = 'translate(-50%, -50%)';
+            meowText.style.fontSize = '2rem';
+            meowText.style.color = '#FF69B4';
+            meowText.style.fontWeight = 'bold';
+            meowText.style.zIndex = '9999';
+            meowText.style.animation = 'bounce 1s ease-out';
+            document.body.appendChild(meowText);
+
+            setTimeout(() => {
+                meowText.remove();
+            }, 1000);
+        }
+
+        function playWithCat(catElement) {
+            const originalEmoji = catElement.innerHTML;
+            catElement.innerHTML = '😸';
+            catElement.style.transform = 'scale(1.5) rotate(360deg)';
+            
+            setTimeout(() => {
+                catElement.innerHTML = originalEmoji;
+                catElement.style.transform = 'scale(1)';
+            }, 1000);
+        }
+
+        // Smooth scrolling for better experience
+        document.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            window.scrollBy({
+                top: e.deltaY,
+                behavior: 'smooth'
+            });
+        }, { passive: false });
+    </script>
+</body>
+</html>
