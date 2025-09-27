@@ -6,11 +6,11 @@ const GallerySection = () => {
   
   // Actual photos in the gallery
   const images = [
-    '/images/pic1.jpg',
-    '/images/pic2.jpg',
-    '/images/pic3.jpg',
-    '/images/pic4.jpg',
-    '/images/pic5.jpg'
+    process.env.PUBLIC_URL + '/images/pic1.jpg',
+  process.env.PUBLIC_URL + '/images/pic2.jpg',
+  process.env.PUBLIC_URL + '/images/pic3.jpg',
+  process.env.PUBLIC_URL + '/images/pic4.jpg',
+  process.env.PUBLIC_URL + '/images/pic5.jpg'
   ];
 
   const nextImage = () => {
