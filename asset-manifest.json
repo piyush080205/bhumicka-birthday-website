@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bhumicka-birthday-website/static/css/main.dd949583.css",
+    "main.js": "/bhumicka-birthday-website/static/js/main.388f880e.js",
+    "index.html": "/bhumicka-birthday-website/index.html",
+    "main.dd949583.css.map": "/bhumicka-birthday-website/static/css/main.dd949583.css.map",
+    "main.388f880e.js.map": "/bhumicka-birthday-website/static/js/main.388f880e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd949583.css",
+    "static/js/main.388f880e.js"
+  ]
+}
